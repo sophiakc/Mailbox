@@ -105,6 +105,14 @@ class MailboxViewController: UIViewController {
                 })
             }
         }
+    
+    
+    @IBAction func didTapDismissLater(_ sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.2) { 
+            self.rescheduleImageView.alpha = 0
+        }
+        
+    }
         
     }
     

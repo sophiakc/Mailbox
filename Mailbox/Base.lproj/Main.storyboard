@@ -62,6 +62,10 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="reschedule" id="h8j-O9-vgk">
                                 <frame key="frameInset" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Jzc-0N-fCu" appends="YES" id="h9k-0m-D1R"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -81,6 +85,11 @@
                         <action selector="didPanMessage:" destination="BYZ-38-t0r" id="oha-fg-k8n"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="Jzc-0N-fCu">
+                    <connections>
+                        <action selector="didTapDismissLater:" destination="BYZ-38-t0r" id="cpi-fB-jR0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="86" y="154"/>
         </scene>
