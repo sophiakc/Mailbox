@@ -34,6 +34,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="archive_icon" id="paF-em-yhC">
+                                                <frame key="frameInset" minX="17" minY="29" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="later_icon" id="F2I-E3-hLs">
+                                                <frame key="frameInset" minX="287" minY="29" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="message" id="aCU-CX-wDq">
                                                 <frame key="frameInset" width="320" height="86"/>
                                                 <autoresizingMask key="autoresizingMask"/>
@@ -51,12 +59,19 @@
                                     </imageView>
                                 </subviews>
                             </scrollView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="reschedule" id="h8j-O9-vgk">
+                                <frame key="frameInset" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="leftIconImage" destination="paF-em-yhC" id="1Wc-LY-9yr"/>
                         <outlet property="messageContainerView" destination="boc-Gl-maq" id="8RG-3U-zSB"/>
                         <outlet property="messageImageView" destination="aCU-CX-wDq" id="peu-vK-2ak"/>
+                        <outlet property="rescheduleImageView" destination="h8j-O9-vgk" id="kVq-03-Poi"/>
+                        <outlet property="rightIconImage" destination="F2I-E3-hLs" id="kqH-pb-bvd"/>
                         <outlet property="scrollView" destination="aMb-Ad-BO7" id="lJ9-NO-Sqj"/>
                     </connections>
                 </viewController>
@@ -71,10 +86,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="archive_icon" width="25" height="25"/>
         <image name="feed" width="320" height="1202"/>
         <image name="help_label" width="320" height="37"/>
+        <image name="later_icon" width="25" height="25"/>
         <image name="message" width="320" height="86"/>
         <image name="nav" width="320" height="65"/>
+        <image name="reschedule" width="320" height="568"/>
         <image name="search" width="320" height="42"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

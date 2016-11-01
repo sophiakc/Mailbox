@@ -15,6 +15,10 @@ class MailboxViewController: UIViewController {
     @IBOutlet weak var messageImageView: UIImageView!
     @IBOutlet weak var messageContainerView: UIView!
     
+    @IBOutlet weak var leftIconImage: UIImageView!
+    
+    @IBOutlet weak var rightIconImage: UIImageView!
+    @IBOutlet weak var rescheduleImageView: UIImageView!
     
     // Variables
     var originalMessageCenter: CGPoint!
@@ -27,7 +31,9 @@ class MailboxViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        rescheduleImageView.alpha = 0
         scrollView.contentSize = CGSize(width: 320, height: 1320)
+        
 
         
     }
@@ -49,18 +55,25 @@ class MailboxViewController: UIViewController {
             // check how much translated and change color
             if translation.x > 200 {
                 messageContainerView.backgroundColor = UIColor.red
-                // working
+                // whenever messageImageView goes, put the icon 20 away from the left hand side
+                leftIconImage.center.x = messageImageView.frame.origin.x - 20
+                leftIconImage.image = deleteIcon
             } else if translation.x > 60 {
                 messageContainerView.backgroundColor = UIColor.green
-                // working
+                leftIconImage.center.x = messageImageView.frame.origin.x - 20
+                leftIconImage.image = archiveIcon
             } else if translation.x < -200 {
                 messageContainerView.backgroundColor = UIColor.brown
-                //working
+                rightIconImage.center.x = messageImageView.frame.size.width + 20
+                rightIconImage.image = listIcon
             } else if translation.x < -60 {
                 messageContainerView.backgroundColor = UIColor.yellow
-                //working
+                rightIconImage.center.x = messageImageView.frame.origin.x + 20
+                rightIconImage.image = laterIcon
             } else {
                 messageContainerView.backgroundColor = UIColor.lightGray
+                leftIconImage.center.x = messageImageView.frame.origin.x - 20
+                rightIconImage.center.x = messageImageView.frame.origin.x + 20
                 
             }
         
@@ -75,10 +88,16 @@ class MailboxViewController: UIViewController {
             
             } else if translation.x < -60 {
                 // pan to the left
+                //some x position off screen to the left
                 UIView.animate(withDuration: 0.2, animations: {
-                    //some x position off screen to the left
-                    self.messageImageView.frame.origin.x = -(self.view.frame.size.width)
+                    self.messageImageView.frame.origin.x += -(self.view.frame.size.width)
+                    self.rightIconImage.center.x += -(self.view.frame.size.width)
+                    }, completion: { (Bool) in
+                        UIView.animate(withDuration: 0.2, animations: {
+                            self.rescheduleImageView.alpha = 1
+                        })
                 })
+            }
             } else {
                 // return to original center
                 UIView.animate(withDuration: 0.2, animations: { 
@@ -89,4 +108,3 @@ class MailboxViewController: UIViewController {
         
     }
     
-}
