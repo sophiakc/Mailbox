@@ -64,16 +64,16 @@ class MailboxViewController: UIViewController {
                 leftIconImage.image = archiveIcon
             } else if translation.x < -200 {
                 messageContainerView.backgroundColor = UIColor.brown
-                rightIconImage.center.x = messageImageView.frame.size.width + 20
+                rightIconImage.center.x = messageImageView.frame.origin.x + messageImageView.frame.size.width + 20
                 rightIconImage.image = listIcon
             } else if translation.x < -60 {
                 messageContainerView.backgroundColor = UIColor.yellow
-                rightIconImage.center.x = messageImageView.frame.origin.x + 20
+                rightIconImage.center.x = messageImageView.frame.origin.x + messageImageView.frame.size.width + 20
                 rightIconImage.image = laterIcon
             } else {
                 messageContainerView.backgroundColor = UIColor.lightGray
                 leftIconImage.center.x = messageImageView.frame.origin.x - 20
-                rightIconImage.center.x = messageImageView.frame.origin.x + 20
+                rightIconImage.center.x = messageImageView.frame.origin.x + messageImageView.frame.size.width + 20
                 
             }
         
