@@ -71,6 +71,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="feedImageView" destination="JAG-Mp-eMA" id="Lbw-q5-PZO"/>
                         <outlet property="leftIconImage" destination="paF-em-yhC" id="1Wc-LY-9yr"/>
                         <outlet property="messageContainerView" destination="boc-Gl-maq" id="8RG-3U-zSB"/>
                         <outlet property="messageImageView" destination="aCU-CX-wDq" id="peu-vK-2ak"/>

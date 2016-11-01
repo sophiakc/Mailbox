@@ -19,6 +19,7 @@ class MailboxViewController: UIViewController {
     
     @IBOutlet weak var rightIconImage: UIImageView!
     @IBOutlet weak var rescheduleImageView: UIImageView!
+    @IBOutlet weak var feedImageView: UIImageView!
     
     // Variables
     var originalMessageCenter: CGPoint!
@@ -108,11 +109,17 @@ class MailboxViewController: UIViewController {
     
     
     @IBAction func didTapDismissLater(_ sender: UITapGestureRecognizer) {
-        UIView.animate(withDuration: 0.2) { 
+        UIView.animate(withDuration: 0.2, animations: { 
             self.rescheduleImageView.alpha = 0
+            }) { (Bool) in
+                UIView.animate(withDuration: 0.2, animations: { 
+                    self.feedImageView.frame.origin.y = self.feedImageView.frame.origin.y - self.messageImageView.frame.height
+                })
+            }
+            
         }
-        
-    }
+    
+    
         
     }
     
