@@ -30,7 +30,7 @@
                                 <frame key="frameInset" minY="144" width="320" height="424"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" id="boc-Gl-maq">
+                                    <view contentMode="scaleToFill" misplaced="YES" id="boc-Gl-maq" userLabel="MessageContainerView">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -55,6 +55,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="messageContainerView" destination="boc-Gl-maq" id="8RG-3U-zSB"/>
+                        <outlet property="messageImageView" destination="aCU-CX-wDq" id="peu-vK-2ak"/>
                         <outlet property="scrollView" destination="aMb-Ad-BO7" id="lJ9-NO-Sqj"/>
                     </connections>
                 </viewController>
