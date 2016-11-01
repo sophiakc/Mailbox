@@ -18,6 +18,10 @@ class MailboxViewController: UIViewController {
     
     // Variables
     var originalMessageCenter: CGPoint!
+    let archiveIcon = #imageLiteral(resourceName: "archive_icon")
+    let laterIcon = #imageLiteral(resourceName: "later_icon")
+    let deleteIcon = #imageLiteral(resourceName: "delete_icon")
+    let listIcon = #imageLiteral(resourceName: "list_icon")
     
     
     override func viewDidLoad() {
