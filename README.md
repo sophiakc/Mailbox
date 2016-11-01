@@ -42,7 +42,7 @@ Total time spent: **25** cumulated hours
 
 ## Video Walkthrough
 
-![Mailbox](mailbox.gif)
+![Mailbox](Mailbox.gif)
 
 
 
